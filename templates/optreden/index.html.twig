@@ -38,4 +38,33 @@
     </table>
 
     <a href="{{ path('optreden_new') }}">Create new</a>
+
+    <h2> Historie van optredens </h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Datum</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for optreden in optredens %}
+            <tr>
+                <td>{{ optreden.id }}</td>
+                <td>{{ optreden.datum ? optreden.datum|date('Y-m-d H:i:s') : '' }}</td>
+
+                <td>
+                    <a href="{{ path('optreden_show', {'id': optreden.id}) }}">show</a>
+                    <a href="{{ path('optreden_edit', {'id': optreden.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}
