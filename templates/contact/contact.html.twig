@@ -4,13 +4,17 @@
 
 {% block body %}
 
-    <div>
+    <div id =  "woeshoem">
+
+        <body style="background-color:powderblue;">
+
+        <h1>Contactformulier</h1>
         {{ form_start(our_form) }}
         {{ form_widget(our_form) }}
+        <form action="mailto:rahin_@hotmail.com" method="post" enctype="text/plain"><input type="submit" value="Verzend"></form>
+        <button onclick="location.href='rahin_@hotmail.com';">Verzenden als email</button>
 
-        <input type="submit" value="Send" />
 
-        {{ form_end(our_form) }}
 
     </div>
 
